@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "christian-kohler.path-intellisense",
+    "dsznajder.es7-react-js-snippets",
+    "yoavbls.pretty-ts-errors",
+    "pomdtr.excalidraw-editor",
+    "streetsidesoftware.code-spell-checker",
+    "vsls-contrib.codetour",
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+    "tomoyukim.vscode-mermaid-editor"
+  ]
+}
