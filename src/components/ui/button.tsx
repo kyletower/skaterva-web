@@ -2,8 +2,7 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   asChild?: boolean;
@@ -13,13 +12,24 @@ export interface ButtonProps
  * Styled action button used throughout the marketing pages.
  */
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'md', asChild, children, ...props }, ref) => {
+  (
+    {
+      className,
+      variant = 'default',
+      size = 'md',
+      asChild,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const variantClasses = {
       default:
-        'bg-[linear-gradient(135deg,#d946ef,#22d3ee)] text-slate-950 shadow-[0_16px_40px_rgba(217,70,239,0.28)] hover:shadow-[0_18px_44px_rgba(34,211,238,0.26)]',
+        'bg-[linear-gradient(135deg,var(--neon-primary),var(--accent-cyan))] text-slate-950 shadow-[0_16px_40px_rgba(217,70,239,0.28)] hover:shadow-[0_18px_44px_rgba(34,211,238,0.26)]',
       secondary:
         'border border-white/10 bg-white/8 text-slate-50 hover:bg-white/12',
-      outline: 'border border-white/12 bg-transparent text-slate-50 hover:bg-white/6',
+      outline:
+        'border border-white/12 bg-transparent text-slate-50 hover:bg-white/6',
       ghost: 'bg-transparent text-slate-200 hover:bg-white/6 hover:text-white',
     } as const;
 
@@ -31,12 +41,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = cn(
       'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 ease-out',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22d3ee]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#020617]',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background',
       'disabled:pointer-events-none disabled:opacity-50',
       'hover:-translate-y-0.5 hover:scale-[1.03] active:scale-[0.99]',
       variantClasses[variant],
       sizeClasses[size],
-      className,
+      className
     );
 
     if (asChild && React.isValidElement(children)) {
@@ -52,7 +62,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
       </button>
     );
-  },
+  }
 );
 
 Button.displayName = 'Button';
