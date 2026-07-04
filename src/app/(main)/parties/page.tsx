@@ -1,7 +1,8 @@
 import { CheckCircle2 } from 'lucide-react';
 
+import { CheckAvailabilityButton } from '@/components/parties/check-availability-button';
+import { ReservePartyButton } from '@/components/parties/reserve-party-button';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -45,7 +46,7 @@ export default function PartiesPage() {
             ))}
           </div>
 
-          <Button size="lg">Reserve Your Party</Button>
+          <ReservePartyButton size="lg">Reserve Your Party</ReservePartyButton>
         </div>
 
         <div className="animate-fade-in-right">
@@ -102,9 +103,9 @@ export default function PartiesPage() {
               <div className="text-sm text-slate-400">
                 Dates fill quickly on weekends.
               </div>
-              <Button variant="secondary" size="sm">
+              <CheckAvailabilityButton variant="secondary" size="sm">
                 Check Availability
-              </Button>
+              </CheckAvailabilityButton>
             </CardFooter>
           </Card>
         </div>
