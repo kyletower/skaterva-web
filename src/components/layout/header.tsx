@@ -7,17 +7,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { businessHours, contactInfo, navItems } from '@/data/content';
 import { cn } from '@/lib/utils';
-
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Schedule', href: '/schedule' },
-  { label: 'Classes', href: '/classes' },
-  { label: 'Parties', href: '/parties' },
-  { label: 'Fundraisers', href: '/fundraisers' },
-  { label: 'Snack Bar', href: '/snack-bar' },
-  { label: 'Contact', href: '/contact' },
-];
 
 /**
  * Site-wide sticky header with desktop nav, mobile drawer, and mobile bottom CTA bar.
@@ -42,16 +33,16 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-white/6 bg-background/75 backdrop-blur-xl supports-[backdrop-filter]:bg-background/65">
+      <header className="sticky top-0 z-50 border-b border-white/6 bg-background/75 backdrop-blur-xl supports-backdrop-filter:bg-background/65">
         <a
           href="#main-content"
-          className="sr-only rounded-full border border-accent-cyan/40 bg-background px-4 py-2 text-sm text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70]"
+          className="sr-only rounded-full border border-accent-cyan/40 bg-background px-4 py-2 text-sm text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-70"
         >
           Skip to content
         </a>
         <div className="container-shell flex h-20 items-center justify-between gap-4">
           <Link href="/" className="group flex items-center gap-3 text-left">
-            <div className="flex h-12 w-12 items-center justify-center rounded-[16px] border border-white/10 bg-white/6 shadow-[0_0_30px_rgba(217,70,239,0.22)]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/6 shadow-[0_0_30px_rgba(217,70,239,0.22)]">
               <Sparkles className="h-6 w-6 text-neon-primary transition-transform duration-300 group-hover:rotate-12" />
             </div>
             <div>
@@ -87,7 +78,7 @@ export function Header() {
             </Button>
             <button
               type="button"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-[16px] border border-white/10 bg-white/6 text-slate-50 transition hover:bg-white/10 xl:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/6 text-slate-50 transition hover:bg-white/10 xl:hidden"
               onClick={() => setMobileOpen(true)}
               aria-label="Open navigation menu"
               aria-expanded={mobileOpen}
@@ -115,7 +106,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/65 backdrop-blur-sm xl:hidden"
+            className="fixed inset-0 z-60 bg-black/65 backdrop-blur-sm xl:hidden"
             role="dialog"
             aria-modal="true"
             aria-labelledby="mobile-navigation-title"
@@ -177,11 +168,11 @@ export function Header() {
                 <div className="mt-3 grid gap-3 text-sm text-slate-200">
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-slate-400">Hours</span>
-                    <span>Mon - Sun · 12 PM - 10 PM</span>
+                    <span>{businessHours.join(' | ')}</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-slate-400">Phone</span>
-                    <span>(804) 555-0196</span>
+                    <span>{contactInfo.phone}</span>
                   </div>
                 </div>
               </div>
