@@ -1,0 +1,8 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Snack bar and seating">
+  <rect width="1200" height="800" fill="#020617" />
+  <rect x="80" y="160" width="1040" height="460" rx="36" fill="#111827" />
+  <rect x="160" y="230" width="880" height="80" rx="14" fill="#1e293b" />
+  <rect x="160" y="360" width="880" height="80" rx="14" fill="#1e293b" />
+  <rect x="160" y="490" width="880" height="80" rx="14" fill="#1e293b" />
+  <text x="80" y="720" fill="#f8fafc" font-size="52" font-family="Arial, sans-serif">Snack Bar and Seating</text>
+</svg>

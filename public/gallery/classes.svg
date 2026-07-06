@@ -1,0 +1,8 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Group class moments">
+  <rect width="1200" height="800" fill="#030712" />
+  <circle cx="260" cy="280" r="110" fill="#22d3ee" fill-opacity="0.3" />
+  <circle cx="560" cy="300" r="130" fill="#d946ef" fill-opacity="0.3" />
+  <circle cx="860" cy="320" r="120" fill="#22d3ee" fill-opacity="0.3" />
+  <rect x="110" y="460" width="980" height="150" rx="28" fill="#111827" />
+  <text x="80" y="720" fill="#f8fafc" font-size="52" font-family="Arial, sans-serif">Group Class Moments</text>
+</svg>
