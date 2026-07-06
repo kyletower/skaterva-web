@@ -4,56 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
-
-type EventItem = {
-  day: string;
-  title: string;
-  time: string;
-  badge: string;
-  description: string;
-};
-
-const upcomingEvents: EventItem[] = [
-  {
-    day: 'Fri 14',
-    title: 'Glow Night Skate',
-    time: '7:00 PM - 10:00 PM',
-    badge: 'Theme Night',
-    description:
-      'Blacklight energy, neon vibes, and a packed floor with family-friendly music.',
-  },
-  {
-    day: 'Sat 15',
-    title: 'Family Afternoon Session',
-    time: '1:00 PM - 4:00 PM',
-    badge: 'Popular',
-    description:
-      'A smoother tempo with space for beginners, birthday groups, and all ages.',
-  },
-  {
-    day: 'Sun 16',
-    title: 'Holiday Team Skate',
-    time: '5:30 PM - 8:30 PM',
-    badge: 'Special Event',
-    description:
-      'Great for youth teams, church groups, and pre-planned celebration nights.',
-  },
-];
-
-const calendarCategories = [
-  {
-    label: 'Theme Nights',
-    value: 'Glow skates, music nights, and family favorites',
-  },
-  {
-    label: 'Special Sessions',
-    value: 'Extra sessions for holidays and busy weekends',
-  },
-  {
-    label: 'Holiday Events',
-    value: 'Premium dates that deserve standout promotion',
-  },
-];
+import { calendarCategories, upcomingEvents } from '@/data/content';
 
 export default function SchedulePage() {
   return (
@@ -126,7 +77,7 @@ export default function SchedulePage() {
               >
                 <Card className="border-white/8 bg-white/5">
                   <CardContent className="flex items-start gap-4 p-5 md:p-6">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[16px] bg-accent-cyan/10 text-accent-cyan-mid">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-cyan/10 text-accent-cyan-mid">
                       <CalendarDays className="h-5 w-5" />
                     </div>
                     <div>

@@ -2,36 +2,7 @@ import { ChevronRight, Gift } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
-
-const groups = [
-  'Schools',
-  'Churches',
-  'Sports Teams',
-  'Community Organizations',
-];
-
-const steps = [
-  {
-    title: 'Schedule',
-    detail:
-      'Lock in a date for your school, church, sports team, or neighborhood group.',
-  },
-  {
-    title: 'Promote',
-    detail:
-      'Share a clear invitation with families and supporters before the event night.',
-  },
-  {
-    title: 'Skate Night',
-    detail:
-      'Hosts, families, and skaters enjoy a smooth event with a built-in revenue window.',
-  },
-  {
-    title: 'Earn Funds',
-    detail:
-      'Raise money through a simple, dependable, and repeatable community event.',
-  },
-];
+import { fundraiserGroups, fundraiserSteps } from '@/data/content';
 
 export default function FundraisersPage() {
   return (
@@ -55,7 +26,7 @@ export default function FundraisersPage() {
                   </span>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {groups.map((group) => (
+                  {fundraiserGroups.map((group) => (
                     <div
                       key={group}
                       className="rounded-[18px] border border-white/8 bg-white/6 px-4 py-3 text-sm font-medium text-slate-100"
@@ -72,7 +43,7 @@ export default function FundraisersPage() {
             <Card className="border-white/8 bg-white/5">
               <CardContent className="p-6 md:p-7">
                 <ol className="grid gap-4 md:grid-cols-4">
-                  {steps.map((step, index) => (
+                  {fundraiserSteps.map((step, index) => (
                     <li
                       key={step.title}
                       className="relative rounded-[20px] border border-white/8 bg-white/6 p-4"
@@ -86,7 +57,7 @@ export default function FundraisersPage() {
                       <p className="mt-2 text-sm leading-7 text-slate-300">
                         {step.detail}
                       </p>
-                      {index < steps.length - 1 ? (
+                      {index < fundraiserSteps.length - 1 ? (
                         <ChevronRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-accent-cyan md:block" />
                       ) : null}
                     </li>
