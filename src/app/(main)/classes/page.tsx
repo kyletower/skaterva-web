@@ -2,48 +2,13 @@ import { Clock, Dumbbell, DollarSign } from 'lucide-react';
 
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
+import { classPath, classes } from '@/data/content';
 
-const classes = [
-  {
-    level: 'Beginner Classes',
-    detail:
-      'Learn balance, stopping, turning, and rink confidence in a supportive setting.',
-  },
-  {
-    level: 'Intermediate Classes',
-    detail:
-      'Develop stride control, smoother transitions, and better control in group sessions.',
-  },
-  {
-    level: 'Advanced Skills',
-    detail:
-      'Challenge yourself with speed, style, precision work, and polished floor technique.',
-  },
-];
-
-const classInfo = [
-  {
-    icon: Clock,
-    label: 'Schedule',
-    value: 'Saturdays 10 AM – 12 PM · Sundays 11 AM – 1 PM',
-    color: 'text-accent-cyan-mid',
-    bg: 'bg-accent-cyan/10',
-  },
-  {
-    icon: DollarSign,
-    label: 'Pricing',
-    value: '$18 per session · $60 for a 4-session pack · rentals included',
-    color: 'text-neon-hover-light',
-    bg: 'bg-neon-primary/10',
-  },
-  {
-    icon: Dumbbell,
-    label: 'What to bring',
-    value: 'Comfortable clothing and socks. Skates and safety gear provided.',
-    color: 'text-accent-cyan-light',
-    bg: 'bg-accent-cyan/10',
-  },
-];
+const classIcons = {
+  clock: Clock,
+  price: DollarSign,
+  training: Dumbbell,
+};
 
 export default function ClassesPage() {
   return (
@@ -67,13 +32,13 @@ export default function ClassesPage() {
                   </span>
                 </div>
                 <ol className="space-y-4">
-                  {classes.map((item, index) => (
+                  {classPath.map((item, index) => (
                     <li key={item.level} className="flex gap-4">
                       <div className="flex flex-col items-center">
                         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/8 text-sm font-semibold text-white">
                           {index + 1}
                         </div>
-                        {index < classes.length - 1 ? (
+                        {index < classPath.length - 1 ? (
                           <div className="mt-2 h-full w-px bg-white/10" />
                         ) : null}
                       </div>
@@ -93,31 +58,34 @@ export default function ClassesPage() {
           </div>
 
           <div className="grid gap-4 content-start">
-            {classInfo.map((info, index) => (
-              <div
-                key={info.label}
-                className="animate-fade-in-right"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                <Card className="border-white/8 bg-white/5">
-                  <CardContent className="flex items-start gap-4 p-5 md:p-6">
-                    <div
-                      className={`flex h-11 w-11 items-center justify-center rounded-[16px] ${info.bg} ${info.color}`}
-                    >
-                      <info.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                        {info.label}
+            {classes.map((info, index) => {
+              const Icon = classIcons[info.icon];
+              return (
+                <div
+                  key={info.label}
+                  className="animate-fade-in-right"
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <Card className="border-white/8 bg-white/5">
+                    <CardContent className="flex items-start gap-4 p-5 md:p-6">
+                      <div
+                        className={`flex h-11 w-11 items-center justify-center rounded-2xl ${info.bg} ${info.color}`}
+                      >
+                        <Icon className="h-5 w-5" />
                       </div>
-                      <p className="mt-2 text-sm leading-7 text-slate-300">
-                        {info.value}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
+                      <div>
+                        <div className="text-xs uppercase tracking-[0.24em] text-slate-400">
+                          {info.label}
+                        </div>
+                        <p className="mt-2 text-sm leading-7 text-slate-300">
+                          {info.value}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

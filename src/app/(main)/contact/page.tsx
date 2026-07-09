@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { SectionIntro } from '@/components/ui/section-intro';
 import { Textarea } from '@/components/ui/textarea';
+import { businessHours, contactInfo } from '@/data/content';
 
 export default function ContactPage() {
   return (
@@ -17,14 +18,14 @@ export default function ContactPage() {
         <div className="container-shell grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-stretch">
           <Card className="overflow-hidden border-white/8 bg-white/5">
             <CardContent className="p-0">
-              <div className="relative min-h-[420px] overflow-hidden rounded-[24px]">
+              <div className="relative min-h-105 overflow-hidden rounded-3xl">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.2),transparent_32%),linear-gradient(180deg,rgba(15,23,42,0.88),rgba(2,6,23,0.96))]" />
-                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:48px_48px] opacity-60" />
+                <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[48px_48px] opacity-60" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="rounded-[28px] border border-white/10 bg-black/30 px-6 py-5 text-center shadow-[0_20px_60px_rgba(2,6,23,0.35)] backdrop-blur-xl">
                     <MapPin className="mx-auto h-8 w-8 text-accent-cyan" />
                     <div className="mt-3 text-lg font-semibold text-white">
-                      Ashland, Virginia
+                      {contactInfo.locationLabel}
                     </div>
                     <div className="mt-1 text-sm text-slate-300">
                       Map placeholder for the live location embed.
@@ -44,7 +45,7 @@ export default function ContactPage() {
                 description="The right-side contact card should be one of the fastest scanning surfaces on the page."
               />
 
-              <div className="space-y-3 rounded-[22px] border border-white/8 bg-white/6 p-5">
+              <div className="space-y-3 rounded-2xl border border-white/8 bg-white/6 p-5">
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 h-5 w-5 text-accent-cyan" />
                   <div>
@@ -52,7 +53,7 @@ export default function ContactPage() {
                       Address
                     </div>
                     <p className="mt-1 text-sm text-slate-100">
-                      123 Main Street, Ashland, VA 23005
+                      {contactInfo.address}
                     </p>
                   </div>
                 </div>
@@ -63,7 +64,7 @@ export default function ContactPage() {
                       Hours
                     </div>
                     <p className="mt-1 text-sm text-slate-100">
-                      Mon - Thu: 4 PM - 9 PM | Fri - Sun: 12 PM - 10 PM
+                      {businessHours.join(' | ')}
                     </p>
                   </div>
                 </div>
@@ -74,7 +75,7 @@ export default function ContactPage() {
                       Phone
                     </div>
                     <p className="mt-1 text-sm text-slate-100">
-                      (804) 555-0196
+                      {contactInfo.phone}
                     </p>
                   </div>
                 </div>
@@ -112,7 +113,7 @@ export default function ContactPage() {
                       Call
                     </div>
                     <div className="text-sm font-medium text-white">
-                      (804) 555-0196
+                      {contactInfo.phone}
                     </div>
                   </div>
                 </CardContent>
@@ -125,7 +126,7 @@ export default function ContactPage() {
                       Email
                     </div>
                     <div className="text-sm font-medium text-white">
-                      hello@ashlandskateland.com
+                      {contactInfo.email}
                     </div>
                   </div>
                 </CardContent>

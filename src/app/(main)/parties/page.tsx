@@ -9,15 +9,7 @@ import {
   CardHeader,
 } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
-
-const partyInclusions = [
-  'Private party options',
-  'Group packages',
-  'Food add-ons',
-  'Skate rentals included',
-  'Party rooms',
-  'Staff support on site',
-];
+import { partyInclusions } from '@/data/content';
 
 export default function PartiesPage() {
   return (

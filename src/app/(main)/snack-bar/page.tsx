@@ -3,23 +3,9 @@ import { Utensils } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
+import { preorderCategories, preorderItems } from '@/data/content';
 
 import { PreorderForm } from './preorder-form';
-
-const preorderItems = [
-  { label: 'Admission', price: '$12.00' },
-  { label: 'Skate Rentals', price: '$4.00' },
-  { label: 'Snack Bar Items', price: '$8.50' },
-  { label: 'Drink Bundle', price: '$5.25' },
-];
-
-const preorderCategories = [
-  'Admission',
-  'Skate Rentals',
-  'Food',
-  'Drinks',
-  'Snack Bar Items',
-];
 
 export default function SnackBarPage() {
   return (
@@ -37,7 +23,7 @@ export default function SnackBarPage() {
             {preorderCategories.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 rounded-[18px] border border-white/8 bg-white/6 px-4 py-3"
+                className="flex items-center gap-3 rounded-2xl border border-white/8 bg-white/6 px-4 py-3"
               >
                 <Utensils className="h-4 w-4 text-accent-cyan" />
                 <span className="text-sm font-medium text-slate-100">
@@ -59,7 +45,7 @@ export default function SnackBarPage() {
                   Preorder summary preview
                 </h2>
               </div>
-              <div className="rounded-[16px] border border-white/8 bg-white/6 px-3 py-2 text-sm text-slate-200">
+              <div className="rounded-2xl border border-white/8 bg-white/6 px-3 py-2 text-sm text-slate-200">
                 Secure
               </div>
             </CardHeader>
@@ -67,7 +53,7 @@ export default function SnackBarPage() {
               {preorderItems.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center justify-between rounded-[18px] border border-white/8 bg-white/6 px-4 py-3"
+                  className="flex items-center justify-between rounded-2xl border border-white/8 bg-white/6 px-4 py-3"
                 >
                   <span className="text-sm text-slate-200">{item.label}</span>
                   <span className="text-sm font-semibold text-white">
