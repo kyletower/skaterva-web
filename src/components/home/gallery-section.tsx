@@ -3,6 +3,12 @@ import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { galleryImages } from '@/data/content';
 
+/**
+ * Homepage gallery section showing a curated set of venue images.
+ *
+ * The gallery includes a section heading and a responsive grid of images
+ * rendered from shared content data.
+ */
 export function GallerySection() {
   return (
     <section

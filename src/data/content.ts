@@ -1,13 +1,23 @@
+/**
+ * A navigation link item used by the main site navigation.
+ */
 export type NavItem = {
   label: string;
   href: string;
 };
 
+/**
+ * A single statistic item displayed in the hero section.
+ */
 export type StatItem = {
   label: string;
   value: string;
 };
 
+/**
+ * A service offering shown on the homepage with a title, description, link,
+ * and an icon key.
+ */
 export type ServiceItem = {
   title: string;
   description: string;
@@ -15,18 +25,27 @@ export type ServiceItem = {
   icon: 'play' | 'party' | 'class';
 };
 
+/**
+ * A trust indicator displayed as a supporting benefit card.
+ */
 export type TrustIndicator = {
   title: string;
   description: string;
   icon: 'users' | 'shield' | 'sparkles' | 'ticket' | 'music' | 'gift';
 };
 
+/**
+ * A customer testimonial with quote, author name, and context detail.
+ */
 export type Testimonial = {
   quote: string;
   name: string;
   detail: string;
 };
 
+/**
+ * A highlighted event to display in the upcoming events list.
+ */
 export type EventItem = {
   day: string;
   title: string;
@@ -35,11 +54,17 @@ export type EventItem = {
   description: string;
 };
 
+/**
+ * A class path step shown in the skating program overview.
+ */
 export type ClassPathItem = {
   level: string;
   detail: string;
 };
 
+/**
+ * A single piece of class information such as schedule, pricing, or details.
+ */
 export type ClassInfoItem = {
   icon: 'clock' | 'price' | 'training';
   label: string;
@@ -48,26 +73,41 @@ export type ClassInfoItem = {
   bg: string;
 };
 
+/**
+ * A step item in the fundraiser experience flow.
+ */
 export type FundraiserStep = {
   title: string;
   detail: string;
 };
 
+/**
+ * A gallery image asset used in the homepage gallery section.
+ */
 export type GalleryImage = {
   alt: string;
   src: string;
 };
 
+/**
+ * A generic link item used in footer and other navigation blocks.
+ */
 export type LinkItem = {
   label: string;
   href: string;
 };
 
+/**
+ * A social media link item with label and URL.
+ */
 export type SocialLink = {
   label: string;
   href: string;
 };
 
+/**
+ * Contact details for the business used across the site.
+ */
 export type ContactInfo = {
   address: string;
   phone: string;
@@ -75,6 +115,9 @@ export type ContactInfo = {
   locationLabel: string;
 };
 
+/**
+ * Main site navigation items.
+ */
 export const navItems: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Schedule', href: '/schedule' },
@@ -92,6 +135,9 @@ export const quickStats: StatItem[] = [
   { label: 'Safe & Fun', value: 'Friendly staff and organized sessions' },
 ];
 
+/**
+ * Short marquee highlights shown across the homepage.
+ */
 export const marqueeHighlights: string[] = [
   "Today's Hours: 12 PM - 10 PM",
   'Ashland, Virginia',
@@ -100,6 +146,9 @@ export const marqueeHighlights: string[] = [
   'Family Parties Available Every Weekend',
 ];
 
+/**
+ * Featured service offerings shown on the homepage.
+ */
 export const services: ServiceItem[] = [
   {
     title: 'Open Skate',
@@ -124,6 +173,9 @@ export const services: ServiceItem[] = [
   },
 ];
 
+/**
+ * Trust indicator cards highlighting the rink's key benefits.
+ */
 export const trustIndicators: TrustIndicator[] = [
   {
     title: 'Family Friendly',
@@ -263,6 +315,9 @@ export const fundraiserGroups: string[] = [
   'Community Organizations',
 ];
 
+/**
+ * Step-by-step instructions describing the fundraiser process.
+ */
 export const fundraiserSteps: FundraiserStep[] = [
   {
     title: 'Schedule',
@@ -286,6 +341,9 @@ export const fundraiserSteps: FundraiserStep[] = [
   },
 ];
 
+/**
+ * Customer testimonials shown on the homepage.
+ */
 export const testimonials: Testimonial[] = [
   {
     quote:
@@ -307,6 +365,9 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+/**
+ * Images used in the homepage gallery section.
+ */
 export const galleryImages: GalleryImage[] = [
   { alt: 'Family skate lighting', src: '/gallery/family-skate.svg' },
   { alt: 'Birthday party energy', src: '/gallery/birthday-party.svg' },
@@ -316,6 +377,9 @@ export const galleryImages: GalleryImage[] = [
   { alt: 'Community fundraiser night', src: '/gallery/fundraiser.svg' },
 ];
 
+/**
+ * Preorder menu items and pricing for the snack bar.
+ */
 export const preorderItems: Array<{ label: string; price: string }> = [
   { label: 'Admission', price: '$12.00' },
   { label: 'Skate Rentals', price: '$4.00' },
@@ -323,6 +387,9 @@ export const preorderItems: Array<{ label: string; price: string }> = [
   { label: 'Drink Bundle', price: '$5.25' },
 ];
 
+/**
+ * Categories used to group preorder items.
+ */
 export const preorderCategories: string[] = [
   'Admission',
   'Skate Rentals',
@@ -331,6 +398,9 @@ export const preorderCategories: string[] = [
   'Snack Bar Items',
 ];
 
+/**
+ * Footer navigation links.
+ */
 export const footerLinks: LinkItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Schedule', href: '/schedule' },
@@ -338,16 +408,25 @@ export const footerLinks: LinkItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
+/**
+ * Social media links for the footer.
+ */
 export const socialLinks: SocialLink[] = [
   { label: 'Instagram', href: 'https://instagram.com' },
   { label: 'Facebook', href: 'https://facebook.com' },
 ];
 
+/**
+ * Business hours shown on the contact and schedule pages.
+ */
 export const businessHours: string[] = [
   'Mon - Thu: 4 PM - 9 PM',
   'Fri - Sun: 12 PM - 10 PM',
 ];
 
+/**
+ * The rink's main contact information.
+ */
 export const contactInfo: ContactInfo = {
   address: '123 Main Street, Ashland, VA 23005',
   phone: '(804) 555-0196',

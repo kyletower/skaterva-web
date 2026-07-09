@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { contactInfo, marqueeHighlights } from '@/data/content';
 
+/**
+ * A condensed information bar for the homepage.
+ *
+ * Displays key venue highlights, a quick party booking action, and contact
+ * details for location and phone.
+ */
 export function InfoBarSection() {
   return (
     <section

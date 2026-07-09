@@ -32,6 +32,12 @@ const trustIcons = {
   gift: Gift,
 };
 
+/**
+ * The homepage offerings section highlighting services and trust indicators.
+ *
+ * Renders a set of service cards with icons and calls to action, followed by
+ * supporting trust indicators that convey the rink's family-friendly benefits.
+ */
 export function OfferingsSection() {
   return (
     <section

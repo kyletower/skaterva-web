@@ -10,6 +10,12 @@ import { cn } from '@/lib/utils';
 
 import { testimonials } from '@/data/content';
 
+/**
+ * A homepage testimonials section with an auto-rotating quote panel.
+ *
+ * Displays a featured testimonial with motion transitions and a list of
+ * selectable testimonial cards for user navigation.
+ */
 export function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const prefersReducedMotion = useReducedMotion();

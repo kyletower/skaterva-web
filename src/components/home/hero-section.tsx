@@ -8,6 +8,12 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { quickStats } from '@/data/content';
 
+/**
+ * A small statistic card used inside the hero section.
+ *
+ * @param label - The title of the statistic item.
+ * @param value - The statistic value to display.
+ */
 function QuickStat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-[20px] border border-white/8 bg-white/6 px-4 py-3 backdrop-blur-md">
@@ -19,6 +25,13 @@ function QuickStat({ label, value }: { label: string; value: string }) {
   );
 }
 
+/**
+ * The homepage hero section showcasing booking actions, statistics, and a
+ * live venue preview.
+ *
+ * This component includes a primary headline, calls to action for booking a
+ * party and viewing the schedule, and a decorative preview card.
+ */
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
