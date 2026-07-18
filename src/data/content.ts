@@ -377,14 +377,20 @@ export const galleryImages: GalleryImage[] = [
   { alt: 'Community fundraiser night', src: '/gallery/fundraiser.svg' },
 ];
 
+export type PreorderItem = {
+  label: string;
+  priceCents: number;
+};
+
 /**
  * Preorder menu items and pricing for the snack bar.
+ * `priceCents` is the source of truth; display strings are derived from it.
  */
-export const preorderItems: Array<{ label: string; price: string }> = [
-  { label: 'Admission', price: '$12.00' },
-  { label: 'Skate Rentals', price: '$4.00' },
-  { label: 'Snack Bar Items', price: '$8.50' },
-  { label: 'Drink Bundle', price: '$5.25' },
+export const preorderItems: PreorderItem[] = [
+  { label: 'Admission', priceCents: 1200 },
+  { label: 'Skate Rentals', priceCents: 400 },
+  { label: 'Snack Bar Items', priceCents: 850 },
+  { label: 'Drink Bundle', priceCents: 525 },
 ];
 
 /**
