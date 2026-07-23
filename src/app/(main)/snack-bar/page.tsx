@@ -4,8 +4,11 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { SectionIntro } from '@/components/ui/section-intro';
 import { preorderCategories, preorderItems } from '@/data/content';
+import { calculatePreorderTotalCents, formatCents } from '@/lib/pricing';
 
 import { PreorderForm } from './preorder-form';
+
+const totalCents = calculatePreorderTotalCents(preorderItems);
 
 export default function SnackBarPage() {
   return (
@@ -39,7 +42,7 @@ export default function SnackBarPage() {
             <CardHeader className="flex items-start justify-between gap-4 p-6 md:p-7">
               <div>
                 <Badge className="border-neon-primary/25 bg-neon-primary/12 text-neon-primary-light">
-                  Mock Checkout
+                  Square Sandbox Checkout
                 </Badge>
                 <h2 className="mt-4 text-heading text-2xl font-semibold text-white">
                   Preorder summary preview
@@ -57,7 +60,7 @@ export default function SnackBarPage() {
                 >
                   <span className="text-sm text-slate-200">{item.label}</span>
                   <span className="text-sm font-semibold text-white">
-                    {item.price}
+                    {formatCents(item.priceCents)}
                   </span>
                 </div>
               ))}
@@ -65,11 +68,11 @@ export default function SnackBarPage() {
                 <div className="flex items-center justify-between text-sm text-slate-300">
                   <span>Estimated Total</span>
                   <span className="text-2xl font-semibold text-white">
-                    $29.75
+                    {formatCents(totalCents)}
                   </span>
                 </div>
               </div>
-              <PreorderForm />
+              <PreorderForm totalCents={totalCents} />
             </CardContent>
           </Card>
         </div>
